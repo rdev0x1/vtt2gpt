@@ -1,0 +1,52 @@
+{
+  "manifest_version": 2,
+  "name": "vtt2gpt",
+  "version": "1.0.0",
+  "description": "Extracts video VTT subtitles and send them to ChatGPT",
+  "author": "Ramon Dev <ramon.devx@proton.me>",
+  "homepage_url": "https://github.com/rdev0x1/vtt2gpt",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "vtt2gpt@rdev0x1.github.io",
+      "strict_min_version": "109.0"
+    }
+  },
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "activeTab",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>",
+    "storage",
+    "*://chat.openai.com/chat*",
+    "*://chat.openai.com/c/*",
+    "*://chatgpt.com/chat*",
+    "*://chatgpt.com/c/*"
+  ],
+  "content_scripts": [{
+    "matches": [
+      "https://chat.openai.com/*",
+      "https://chatgpt.com/*"
+    ],
+    "js": ["inject_composer.js"],
+    "run_at": "document_end"
+  }],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_title": "vtt2gpt",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon-16.png",
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  }
+}

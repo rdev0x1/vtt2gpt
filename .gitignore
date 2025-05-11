@@ -3,3 +3,4 @@ node_modules/
 web-ext-artifacts/
 icon-48.png
 icon-128.png
+.echogit/

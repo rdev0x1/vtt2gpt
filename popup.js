@@ -1,4 +1,4 @@
-import browser from "webextension-polyfill";
+/* global browser */
 
 const textarea = document.getElementById("prompt");
 const status   = document.getElementById("status");

@@ -1,4 +1,4 @@
-import browser from "webextension-polyfill";
+/* global browser */
 
 // Map every tabId → its parsed transcript
 const transcriptsByTab = new Map();

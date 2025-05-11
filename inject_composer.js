@@ -1,4 +1,4 @@
-import browser from "webextension-polyfill";
+/* global browser */
 
 // waits for a prompt from background, injects it, clicks Send.
 
